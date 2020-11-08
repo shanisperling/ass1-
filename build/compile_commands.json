@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/shani/ass1-/build",
+  "command": "/bin/gcc-9   -g   -o CMakeFiles/exe1.dir/main.c.o   -c /home/shani/ass1-/main.c",
+  "file": "/home/shani/ass1-/main.c"
+},
+{
+  "directory": "/home/shani/ass1-/build",
+  "command": "/bin/gcc-9   -g   -o CMakeFiles/exe1.dir/ex1.c.o   -c /home/shani/ass1-/ex1.c",
+  "file": "/home/shani/ass1-/ex1.c"
+}
+]
