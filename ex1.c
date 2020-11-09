@@ -5,6 +5,8 @@
 /***************************************************************
  * function's name: is_bid_endian.
  * function's operation: it determinds endianness of a machine.
+ * params: non.
+ * return: int.
  ***************************************************************/ 
 int is_big_endian() {
     // this word is the number 1 represented in 8 bytes
@@ -27,6 +29,8 @@ int is_big_endian() {
 /*********************************************************************
  * function's name: merge_bytes.
  * function's operation: gets to longs and merges them into one long.
+ * params: long,long.
+ * return: long.
  *********************************************************************/ 
 unsigned long merge_bytes(unsigned long x, unsigned long int y) {
     if(is_big_endian()){
@@ -49,21 +53,24 @@ unsigned long merge_bytes(unsigned long x, unsigned long int y) {
     unsigned long result=halfX+halfY;
 }
  /***************************************************************
- * function's name: is_bid_endian.
- * function's operation: it determinds endianness of a machine.
+ * function's name: put_byte.
+ * function's operation: replaced is a single byte in a long.
+ * params: long, char, int.
+ * return: long.
  ***************************************************************/ 
 unsigned long put_byte(unsigned long x, unsigned char b, int i) {
-    unsigned long leftBites = x >> (( 8 - i ) * 8);
-    leftBites = leftBites << (( 8 - i ) * 8);
-    printf("left bites= 0x%lx\n", leftBites);
-    unsigned long rightBites = x << (( i + 1 ) * 8);
-    rightBites = rightBites >> (( i + 1 ) * 8);
-    printf("right bits= 0x%lx\n", rightBites);
-    /*unsigned long c = b << i * 8;
-    printf("c= 0x%lx\n", c);
-    c = c >> i * 8;
-    printf("c= 0x%lx\n", c);*/
-
-    printf("c= 0x%lx\n", c);
-    return (leftBites+rightBites+c);
+    if(is_big_endian()){
+    //big endian
+        //points to the byte we want to change.
+        char * result = (char*) & x +i;
+        //puts the char we were given in the right.
+        *result = b;
+        return x; 
+    }
+    //little endian
+    //points to the byte we want to change.
+    char * result = (char*) & x + (8-1-i);
+    //puts the char we were given in the right.
+    *result = b;
+    return x;
 } 
