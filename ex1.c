@@ -69,7 +69,7 @@ unsigned long put_byte(unsigned long x, unsigned char b, int i) {
     }
     //little endian
     //points to the byte we want to change.
-    char * result = (char*) & x + (8-1-i);
+    char * result = (char*) & x + (sizeof(long)-1-i);
     //puts the char we were given in the right.
     *result = b;
     return x;
