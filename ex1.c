@@ -1,6 +1,5 @@
 // 322715574 shani sperling
 #include "ex1.h"
-#include <stdio.h>
 
 /***************************************************************
  * function's name: is_bid_endian.
