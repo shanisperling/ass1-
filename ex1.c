@@ -32,7 +32,7 @@ int is_big_endian() {
  * return: long.
  *********************************************************************/ 
 unsigned long merge_bytes(unsigned long x, unsigned long int y) {
-    if(is_big_endian()){
+    /*if(is_big_endian()){
     //big endian
     //takes the righא piece we need from y.
     unsigned long halfY=y>>(sizeof(long)/2)*8;
@@ -41,7 +41,7 @@ unsigned long merge_bytes(unsigned long x, unsigned long int y) {
     unsigned long halfX=x<<(sizeof(long)/2)*8;
     halfX=halfX>>(sizeof(long)/2)*8;
     unsigned long result=halfX+halfY;
-    }
+    }*/
     // little endian
     //takes the righא piece we need from y. 
     unsigned long halfY=y<<(sizeof(long)/2)*8;
